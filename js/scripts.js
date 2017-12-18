@@ -1,4 +1,6 @@
 //back end
+var animals = [];
+
 function Animal(type, name, age) {
   this.type = type;
   this.name = name;
@@ -19,7 +21,15 @@ $(document).ready(function() {
     var name = $("#pet-name").val();
     var age = $("#age").val();
     var newAnimal = new Animal(type, name, age);
-
-    $("#available").append("<li>" + newAnimal.type + "<br>" + newAnimal.name + "<br>" + newAnimal.age + "</li>")
+    animals.push(newAnimal);
+    $("#available").append("<li>" + newAnimal.type + "<br>" + newAnimal.name + "<br>" + newAnimal.age + "</li>" + "<br>" + "<button type='button' class='btn btn-success' id='mark-adopted'>Mark Adopted</button>")
   });
+
+  //$("#mark-adopted").click(function(event) {
+    //Animal.setAdopted();
+
+
+
+  //})
+
 });
