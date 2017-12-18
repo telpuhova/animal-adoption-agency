@@ -23,13 +23,13 @@ $(document).ready(function() {
     var newAnimal = new Animal(type, name, age);
     animals.push(newAnimal);
     $("#available").append("<li>" + newAnimal.type + "<br>" + newAnimal.name + "<br>" + newAnimal.age + "</li>" + "<br>" + "<button type='button' class='btn btn-success' id='mark-adopted'>Mark Adopted</button>")
+    
+    $("#mark-adopted").click(function() {
+      alert("1");
+      animals[0].setAdopted();
+      console.log(animals[0].adopted);
+    })
   });
 
-  //$("#mark-adopted").click(function(event) {
-    //Animal.setAdopted();
-
-
-
-  //})
 
 });
