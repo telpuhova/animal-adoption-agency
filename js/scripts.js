@@ -20,6 +20,18 @@ $(document).ready(function() {
     var age = $("#age").val();
     var newAnimal = new Animal(type, name, age);
 
-    $("#available").append("<li>" + newAnimal.type + "<br>" + newAnimal.name + "<br>" + newAnimal.age + "</li>")
+    $("#available").append("<li class='unadopted entry'>" + newAnimal.name + "<ul class='details'><li>" + newAnimal.type + "</li><li>" + newAnimal.age + " years old</li></ul></li>");
+
+    // $("#available").append("<li class='unadopted entry'> <p>hi</p><p>Hey</p></li>");
+
+    $(".details").hide();
+    // $(".hide").hide();
+
+    $(".entry").last().click(function() {
+      // alert(this.next);
+      // $(this.child.next).show();
+      $(this).find("ul").toggle();
+    })
+
   });
 });
