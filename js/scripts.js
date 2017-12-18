@@ -1,5 +1,6 @@
 //back end
 var animals = [];
+var counter = 0;
 
 function Animal(type, name, age) {
   this.type = type;
@@ -22,14 +23,28 @@ $(document).ready(function() {
     var age = $("#age").val();
     var newAnimal = new Animal(type, name, age);
     animals.push(newAnimal);
-    $("#available").append("<li>" + newAnimal.type + "<br>" + newAnimal.name + "<br>" + newAnimal.age + "</li>" + "<br>" + "<button type='button' class='btn btn-success' id='mark-adopted'>Mark Adopted</button>")
-    
-    $("#mark-adopted").click(function() {
-      alert("1");
-      animals[0].setAdopted();
-      console.log(animals[0].adopted);
+    $("#available").append("<li class='available'>" + newAnimal.type + "<br>" + newAnimal.name + "<br>" + newAnimal.age + "<br> <button type='button' class='adopt'>Adopt</button>" + "</li>" + "<br>");
+
+    $(".adopt").last().click(function() {
+      $(this).parent().addClass("adopted");
+      $(this).parent().removeClass("available");
+      alert(newAnimal.name);
     })
+
+    $("#show-adopted").click(function() {
+      $(".adopted").show();
+      $(".available").hide();
+    });
+
+    $("#show-available").click(function() {
+      $(".available").show();
+      $(".adopted").hide();
+    });
+
+    $("#show-all").click(function() {
+      $(".adopted").show();
+      $(".available").show();
+    });
+
   });
-
-
 });
