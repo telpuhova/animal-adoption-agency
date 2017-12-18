@@ -21,14 +21,23 @@ $(document).ready(function() {
     var type = $("#pet-type").val();
     var name = $("#pet-name").val();
     var age = $("#age").val();
+    // var pic = $("#file").val();
+    var pic = $("#pic").val();
     var newAnimal = new Animal(type, name, age);
     animals.push(newAnimal);
-    $("#available").append("<li class='available'>" + newAnimal.type + "<br>" + newAnimal.name + "<br>" + newAnimal.age + "<br> <button type='button' class='adopt'>Adopt</button>" + "</li>" + "<br>");
+
+    $("#available").append("<li class='available entry'>" + newAnimal.name + "<ul class='details'><li>" + newAnimal.type + "</li><li>" + newAnimal.age + " years old</li><li><img src='" + pic + "' alt='doggy'></li><button type='button' class='adopt'>Adopt</button></ul></li>");
+
+    $(".details").hide();
+
+    $(".entry").last().click(function() {
+      $(this).find("ul").toggle();
+    });
 
     $(".adopt").last().click(function() {
-      $(this).parent().addClass("adopted");
-      $(this).parent().removeClass("available");
-      alert(newAnimal.name);
+      $(this).parent().parent().removeClass("available");
+      $(this).parent().parent().addClass("adopted");
+      // alert(newAnimal.name);
     })
 
     $("#show-adopted").click(function() {
@@ -45,6 +54,7 @@ $(document).ready(function() {
       $(".adopted").show();
       $(".available").show();
     });
+
 
   });
 });
