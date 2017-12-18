@@ -1,4 +1,4 @@
-//front-end ---------------------------
+//back end
 function Animal(type, name, age) {
   this.type = type;
   this.name = name;
@@ -10,7 +10,7 @@ Animal.prototype.setAdopted = function () {
   this.adopted = true;
 };
 
-//back-end ----------------------------
+//front-end ----------------------------
 
 $(document).ready(function() {
   $("#adopt-form").submit(function(event) {
@@ -19,7 +19,7 @@ $(document).ready(function() {
     var name = $("#pet-name").val();
     var age = $("#age").val();
     var newAnimal = new Animal(type, name, age);
-    $("#available").append("<ul>" + newAnimal.name + "</ul>" + "<li>" + newAnimal.type + "</li>" + "<li>" + newAnimal.age + "</li>" );
 
-  })
+    $("#available").append("<li>" + newAnimal.type + "<br>" + newAnimal.name + "<br>" + newAnimal.age + "</li>")
+  });
 });
