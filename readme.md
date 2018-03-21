@@ -1,20 +1,20 @@
 # Animal adoption agency
 
- _website for animal adoption agency, 12/18/2017_
+website for animal adoption agency, 12/18/2017
 
 By **telpuhova, rossfletcher19, ZEvans1**
 
 ## Description
 
-_Web application that displays animals available for adoption._
+Web application that displays animals available for adoption.
 
 ## Setup
 
-* _clone repository_
-* _open index.html in browser_
+* clone repository
+* open index.html in browser
 
 ## Technologies Used
 
-_HTML, CSS, JS, Bootstrap, jquery_
+HTML, CSS, JS, Bootstrap, jquery
 
 Copyright (c) 2017 **telpuhova, rossfletcher19, ZEvans1**
